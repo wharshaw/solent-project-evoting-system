@@ -60,13 +60,13 @@
                       <input type="file" id="photo" name="photo">
                     </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="platform" class="col-sm-3 control-label">Platform</label>
 
                     <div class="col-sm-9">
                       <textarea class="form-control" id="platform" name="platform" rows="7"></textarea>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
@@ -84,7 +84,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Voter</b></h4>
+              <h4 class="modal-title"><b>Edit Party</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="parties_edit.php">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_position" class="col-sm-3 control-label">Status</label>
+                    <label for="edit_status" class="col-sm-3 control-label">Status</label>
 
                     <div class="col-sm-9">
                       <select class="form-control" id="edit_status" name="status" required>
@@ -107,18 +107,11 @@
                           $query = $conn->query($sql);
                           while($row = $query->fetch_assoc()){
                             echo "
-                              <option value='".$row['StatusId']."'>".$row['description']."</option>
+                              <option value='".$row['id']."'>".$row['status']."</option>
                             ";
                           }
                         ?>
                       </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_platform" class="col-sm-3 control-label">Platform</label>
-
-                    <div class="col-sm-9">
-                      <textarea class="form-control" id="edit_platform" name="platform" rows="7"></textarea>
                     </div>
                 </div>
             </div>
@@ -167,7 +160,7 @@
               <h4 class="modal-title"><b><span class="fullname"></span></b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="candidates_photo.php" enctype="multipart/form-data">
+              <form class="form-horizontal" method="POST" action="parties_photo.php" enctype="multipart/form-data">
                 <input type="hidden" class="id" name="id">
                 <div class="form-group">
                     <label for="photo" class="col-sm-3 control-label">Photo</label>

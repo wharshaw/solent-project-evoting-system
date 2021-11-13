@@ -18,8 +18,8 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Select candidate to update photo first';
+		$_SESSION['error'] = 'Select party to update photo first';
 	}
 
-	header('location: candidates.php');
+	header('location: parties.php');
 ?>
