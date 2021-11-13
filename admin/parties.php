@@ -54,28 +54,24 @@
                   <th class="hidden"></th>
                   <th>Party Name</th>
                   <th>Image</th>
-                  <th>Status</th>
+                  <th>Status</th>      
                   <th>Tools</th>
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT *, party.id AS parid 
-                    FROM party 
-                    LEFT JOIN status 
-                    ON status.id=party.status_id ";
+                    $sql = "SELECT *, party.id AS parid FROM party LEFT JOIN status ON status.id=party.status_id ";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
                       $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
                       echo "
                         <tr>
                           <td class='hidden'></td>
-                          <td>".$row['PartyName']."</td>
+                          <td>".$row['partyname']."</td>
                           <td>
                             <img src='".$image."' width='30px' height='30px'>
                             <a href='#edit_photo' data-toggle='modal' class='pull-right photo' data-id='".$row['parid']."'><span class='fa fa-edit'></span></a>
-                          </td>
-                          <td>".$row['status']."</td>
-                          <td><a href='#platform' data-toggle='modal' class='btn btn-info btn-sm btn-flat platform' data-id='".$row['parid']."'><i class='fa fa-search'></i> View</a></td>
+                          </td>                          
+                          <td>".$row['status']."</td>                          
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['parid']."'><i class='fa fa-edit'></i> Edit</button>
                             <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['parid']."'><i class='fa fa-trash'></i> Delete</button>
