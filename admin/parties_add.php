@@ -10,7 +10,7 @@
 			move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
 		}
 
-		$sql = "INSERT INTO party (partyname, photo, status_id) VALUES ('$partyname', '$filename', '$status')";
+		$sql = "INSERT INTO party (partyname, party_photo, status_id) VALUES ('$partyname', '$filename', '$status')";
 // 		echo $sql;
 // if (!$mysqli->query($sql)) {
 //     echo 'Error: ', $mysqli->error;

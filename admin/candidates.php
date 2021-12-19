@@ -52,11 +52,11 @@
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th class="hidden"></th>
-                  <th>Position</th>
+                  <th>Types of Elections</th>
                   <th>Photo</th>
                   <th>Firstname</th>
                   <th>Lastname</th>
-                  <th>Platform</th>
+                 <!-- <th>Platform</th> -->
                   <th>Tools</th>
                 </thead>
                 <tbody>
