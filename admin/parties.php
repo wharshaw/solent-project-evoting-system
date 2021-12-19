@@ -62,13 +62,13 @@
                     $sql = "SELECT *, party.id AS parid FROM party LEFT JOIN status ON status.id=party.status_id ";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
-                      $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
+                      $image = (!empty($row['party_photo'])) ? '../images/'.$row['party_photo'] : '../images/profile.jpg';
                       echo "
                         <tr>
                           <td class='hidden'></td>
                           <td>".$row['partyname']."</td>
                           <td>
-                            <img src='".$image."' width='30px' height='30px'>
+                            <img src='".$image."' width='55.7px' height='31.9px'>
                             <a href='#edit_photo' data-toggle='modal' class='pull-right photo' data-id='".$row['parid']."'><span class='fa fa-edit'></span></a>
                           </td>                          
                           <td>".$row['status']."</td>                          

@@ -8,7 +8,7 @@
 			move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
 		}
 		
-		$sql = "UPDATE party SET photo = '$filename' WHERE id = '$id'";
+		$sql = "UPDATE party SET party_photo = '$filename' WHERE id = '$id'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Photo updated successfully';
 		}
