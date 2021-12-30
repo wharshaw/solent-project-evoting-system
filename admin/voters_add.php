@@ -4,6 +4,7 @@
 	if(isset($_POST['add'])){
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
+		
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 		$filename = $_FILES['photo']['name'];
 		if(!empty($filename)){

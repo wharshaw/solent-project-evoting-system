@@ -1,4 +1,5 @@
 <?php
+	error_reporting(E_ERROR | E_PARSE);
 	include 'includes/session.php';
 
 	function generateRow($conn){
@@ -49,13 +50,15 @@
     $pdf->SetHeaderData('', '', PDF_HEADER_TITLE, PDF_HEADER_STRING);  
     $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));  
     $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));  
-    $pdf->SetDefaultMonospacedFont('helvetica');  
+    //$pdf->SetDefaultMonospacedFont('helvetica');  
+    $pdf->SetDefaultMonospacedFont('dejavusans');  
     $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);  
     $pdf->SetMargins(PDF_MARGIN_LEFT, '10', PDF_MARGIN_RIGHT);  
     $pdf->setPrintHeader(false);  
     $pdf->setPrintFooter(false);  
     $pdf->SetAutoPageBreak(TRUE, 10);  
-    $pdf->SetFont('helvetica', '', 11);  
+   // $pdf->SetFont('helvetica', '', 11);  
+	$pdf->SetFont('dejavusans', '', 14, '', true);
     $pdf->AddPage();  
     $content = '';  
     $content .= '
@@ -65,7 +68,19 @@
       ';  
    	$content .= generateRow($conn);  
     $content .= '</table>';  
-    $pdf->writeHTML($content);  
+
+	$html = <<<EOD
+<h1>Welcome to <a href="http://www.tcpdf.org" style="text-decoration:none;background-color:#CC0000;color:black;">&nbsp;<span style="color:black;">TC</span><span style="color:white;">PDF</span>&nbsp;</a>!</h1>
+<i>This is the first example of TCPDF library.</i>
+<p>This text is printed using the <i>writeHTMLCell()</i> method but you can also use: <i>Multicell(), writeHTML(), Write(), Cell() and Text()</i>.</p>
+<p>Please check the source code documentation and other examples for further information.</p>
+<p style="color:#CC0000;">TO IMPROVE AND EXPAND TCPDF I NEED YOUR SUPPORT, PLEASE <a href="http://sourceforge.net/donate/index.php?group_id=128076">MAKE A DONATION!</a></p>
+EOD;
+
+	
+
+    $pdf->writeHtml("sadadadda <> asadad");  
+//	$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
     $pdf->Output('election_result.pdf', 'I');
 
 ?>
