@@ -122,7 +122,7 @@ $(function(){
   $(document).on('click', '.platform', function(e){
     e.preventDefault();
     var id = $(this).data('id');
-    getRow(id);
+    getRow_harsha(id);
   });
 
 });
@@ -141,6 +141,25 @@ function getRow(id){
       $('#edit_platform').val(response.platform);
       $('.fullname').html(response.firstname+' '+response.lastname);
       $('#desc').html(response.platform);
+    }
+  });
+}
+
+
+function getRow_harsha(id){
+  $.ajax({
+    type: 'POST',
+    url: 'candidates_row.php',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response){
+      $('.id').val(response.canid);
+      $('#view_firstname').val(response.firstname);
+      $('#view_lastname').val(response.lastname);
+      $('#view_address').val(response.address);
+      $('#view_division').val(response.division);
+      $('#view_nic').val(response.nic);
+      //$('#view_party').val(response.party);
     }
   });
 }

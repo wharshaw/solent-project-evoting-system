@@ -45,14 +45,14 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header with-border">
+           <!-- <div class="box-header with-border">
               <a href="#reset" data-toggle="modal" class="btn btn-danger btn-sm btn-flat"><i class="fa fa-refresh"></i> Reset</a>
-            </div>
+            </div>-->
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th class="hidden"></th>
-                  <th>Position</th>
+                  <th>Type of Election</th>
                   <th>Candidate</th>
                   <th>Voter</th>
                 </thead>

@@ -57,7 +57,7 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p>No. of Positions</p>
+              <p>No. of Elections</p>
             </div>
             <div class="icon">
               <i class="fa fa-tasks"></i>
@@ -117,7 +117,7 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p>Voters Voted</p>
+              <p>Voted count</p>
             </div>
             <div class="icon">
               <i class="fa fa-edit"></i>
@@ -128,7 +128,7 @@
         <!-- ./col -->
       </div>
 
-      <div class="row">
+<!--      <div class="row">
         <div class="col-xs-12">
           <h3>Votes Tally
             <span class="pull-right">
@@ -137,7 +137,7 @@
           </h3>
         </div>
       </div>
-
+      -->
       <?php
         $sql = "SELECT * FROM positions ORDER BY priority ASC";
         $query = $conn->query($sql);

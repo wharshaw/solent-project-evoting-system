@@ -30,6 +30,7 @@
 						
 					}
 					else{
+						
 						$candidate = $_POST[$position];
 						$sql_array[] = "INSERT INTO votes (voters_id, candidate_id, position_id) VALUES ('".$voter['id']."', '$candidate', '$pos_id')";
 					}
@@ -40,9 +41,10 @@
 
 			if(!$error){
 				foreach($sql_array as $sql_row){
+					//echo $sql_row."<br>";
 					$conn->query($sql_row);
 				}
-
+//exit();
 				unset($_SESSION['post']);
 				$_SESSION['success'] = 'Ballot Submitted';
 
