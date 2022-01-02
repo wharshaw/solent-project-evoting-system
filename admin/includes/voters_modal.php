@@ -24,6 +24,27 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="address" class="col-sm-3 control-label">Address</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="address" name="address" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="division" class="col-sm-3 control-label">Gramasewaka Division</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="division" name="division" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nic" class="col-sm-3 control-label">NIC No.</label>
+
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="nic" name="nic" required>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="password" class="col-sm-3 control-label">Password</label>
 
                     <div class="col-sm-9">

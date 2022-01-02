@@ -20,7 +20,7 @@
 			$image = (!empty($crow['photo'])) ? '../images/'.$crow['photo'] : '../images/profile.jpg';
 			$candidate .= '
 				<li>
-					'.$input.'<button class="btn btn-primary btn-sm btn-flat clist"><i class="fa fa-search"></i> Platform</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
+					'.$input.'<img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
 				</li>
 			';
 		}
@@ -43,9 +43,9 @@
 						</div>
 						<div class="box-body">
 							<p>'.$instruct.'
-								<span class="pull-right">
+								<!--<span class="pull-right">
 									<button type="button" class="btn btn-success btn-sm btn-flat reset" data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reset</button>
-								</span>
+								</span>-->
 							</p>
 							<div id="candidate_list">
 								<ul>
